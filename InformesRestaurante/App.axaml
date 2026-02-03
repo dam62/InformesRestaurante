@@ -3,6 +3,10 @@
              x:Class="InformesRestaurante.App"
              xmlns:local="using:InformesRestaurante"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             xmlns:styling="clr-namespace:FluentAvalonia.Styling;assembly=FluentAvalonia"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:themes1="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -11,6 +15,9 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <themes:MaterialTheme BaseTheme="Light" PrimaryColor="Orange" SecondaryColor="Lime" />
+        <styling:FluentAvaloniaTheme />
+        <avalonia:MaterialIconStyles />
+        <dialogHostAvalonia:DialogHostStyles />
+        <themes1:MaterialTheme BaseTheme="Light" PrimaryColor="BlueGrey" SecondaryColor="Green" />
     </Application.Styles>
 </Application>
