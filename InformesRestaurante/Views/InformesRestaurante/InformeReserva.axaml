@@ -2,7 +2,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:InformesRestaurante.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="InformesRestaurante.Views.InformesRestaurante.InformeReserva">
-    Welcome to Avalonia!
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="*,*"
+          ShowGridLines="False"
+          Margin="20">
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock Text="Informe 1 · Informe de la reserva"
+                           FontSize="18"
+                           FontWeight="Bold" />
+
+                <TextBlock TextWrapping="Wrap"
+                           Text="Informe individual que muestra la información detallada de una reserva seleccionado por el usuario.&#10;&#10;
+El informe deberá generarse a partir del identificador de la reserva como parámetro.&#10;&#10;
+El informe debe incluir:&#10;
+- Identificador de la reserva&#10;
+- Nombre del cliente&#10;
+- Correo del cliente&#10;
+- Identificador de la mesa&#10;
+- Capacidad de la mesa&#10;
+- Ubicación de la mesa&#10;
+- Fecha de la reserva&#10;
+- Número de personas"/>
+            </StackPanel>
+        </Border>
+        
+        <Border Grid.Column="1"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <StackPanel Spacing="16">
+
+                <TextBlock Text="Opciones del informe"
+                           FontSize="16"
+                           FontWeight="Bold" />
+
+                
+                <StackPanel Spacing="4">
+                    <TextBlock Text="ID de la reserva"
+                               FontSize="13"
+                               Foreground="DimGray" />
+                    <TextBox x:Name="IDReserva"
+                             Watermark="Indique el ID de la reserva" />
+                </StackPanel>
+                <Separator />
+
+                <!-- Botones -->
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Spacing="10">
+
+                    <Button Content="Generar informe"
+                            Width="150"
+                            Height="36"
+                            Command="{Binding }"
+                            CommandParameter="{Binding ElementName=IDReserva, Path=Text}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
 </UserControl>
