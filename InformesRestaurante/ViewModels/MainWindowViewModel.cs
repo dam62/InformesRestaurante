@@ -9,8 +9,12 @@ public partial class MainWindowViewModel : ViewModelBase
     private N8NService n8nService = new();
     [ObservableProperty] private string url;
     [ObservableProperty] private bool seMuestraPDF = false;
-    
-    
+
+    [RelayCommand]
+    public void GenerarPDFReserva(string id)
+    {
+        Url = "localhost:8080//" + id;
+    }
     
     [RelayCommand]
     public void OcultarPDF()

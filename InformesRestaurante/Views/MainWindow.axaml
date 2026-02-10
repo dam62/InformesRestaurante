@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:informesRestaurante="clr-namespace:InformesRestaurante.Views.InformesRestaurante"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="InformesRestaurante.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -15,180 +16,46 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Grid ShowGridLines="True"
-          RowDefinitions="600,200">
-        <WebView Grid.Row="1" Url="{Binding Url}"
-                 IsVisible="{Binding SeMuestraPDF}" />
-        <TabControl Grid.Row="0" TabStripPlacement="Top"
-                    IsVisible="{Binding !SeMuestraPDF}">
-            <TabControl.Items>
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <avalonia:MaterialIcon Kind="Account"
-                                                   Width="20"
-                                                   Height="20" />
-                            <TextBlock Classes="Centered"
-                                       Text="Informes del Restaurante" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabControl TabStripPlacement="Left">
-                        <TabControl.Items>
-                            <TabItem>
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric1Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Informe 1" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
+    <Grid>
+        <!-- Contenido principal -->
+        <TabControl>
 
-                            <TabItem>
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric2Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Informe 2" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
-                        </TabControl.Items>
-                    </TabControl>
-                </TabItem>
-                
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <avalonia:MaterialIcon Kind="ChartBar"
-                                                   Width="20"
-                                                   Height="20" />
-                            <TextBlock Classes="Centered"
-                                       Text="Gráficos de barras" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabControl TabStripPlacement="Left">
-                        <TabControl.Items>
-                            <TabItem>
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric1Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Ejemplo 1" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
+            <!-- INFORMES -->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <avalonia:MaterialIcon Kind="Table"
+                                               Width="20"
+                                               Height="20" />
+                        <TextBlock Classes="Centered"
+                                   Text="Informes Restaurante" />
+                    </StackPanel>
+                </TabItem.Header>
 
-                            <TabItem>
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric2Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Ejemplo 2" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
-                            
-                            <TabItem Margin="10">
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric3Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Ejemplo 3" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
-                        </TabControl.Items>
-                    </TabControl>
+                <TabControl TabStripPlacement="Left">
+                    <TabItem Header="Informe Reserva">
+                        <informesRestaurante:InformeReserva/>
+                    </TabItem>
+                    <TabItem Header="Ejemplo 2">
+                        <!-- Contenido futuro -->
+                    </TabItem>
+                </TabControl>
+            </TabItem>
 
-                </TabItem>
+            <!-- BARRAS -->
+            <TabItem Header="Gráficos de barras">
+                <TabControl TabStripPlacement="Left">
+                    <TabItem Header="Ejemplo 1"/>
+                    <TabItem Header="Ejemplo 2"/>
+                </TabControl>
+            </TabItem>
 
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <avalonia:MaterialIcon Kind="ChartPie" />
-                            <TextBlock Classes="Centered"
-                                       Text="Gráficos de circulos" />
-                        </StackPanel>
-                    </TabItem.Header>
-                    <TabControl TabStripPlacement="Left">
-                        <TabControl.Items>
-                            <TabItem>
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric1Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Ejemplo 1" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
-
-                            <TabItem>
-                                <TabItem.Header>
-                                    <StackPanel Orientation="Horizontal">
-                                        <avalonia:MaterialIcon Kind="Numeric2Box"
-                                                               Width="20"
-                                                               VerticalAlignment="Center"
-                                                               Height="20" />
-                                        <TextBlock Classes="Centered"
-                                                   VerticalAlignment="Center"
-                                                   Text="Ejemplo 2" />
-                                    </StackPanel>
-                                </TabItem.Header>
-                            </TabItem>
-                            
-                            
-                        </TabControl.Items>
-                    </TabControl>
-
-                </TabItem>
-
-                <TabItem>
-                    <TabItem.Header>
-                        <StackPanel Orientation="Horizontal">
-                            <avalonia:MaterialIcon Kind="ChartLine" />
-                            <TextBlock Classes="Centered"
-                                       Text="Gráficos de líneas" />
-                        </StackPanel>
-                    </TabItem.Header>
-
-                </TabItem>
-
-            </TabControl.Items>
+            <!-- CIRCULARES -->
+            <TabItem Header="Gráficos circulares">
+                <TabControl TabStripPlacement="Left">
+                    <TabItem Header="Ejemplo 1"/>
+                </TabControl>
+            </TabItem>
         </TabControl>
-        <Grid Grid.Row="1"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Center">
-            <Button HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    IsVisible="{Binding SeMuestraPDF}"
-                    Command="{Binding OcultarPDFCommand}"
-                    Content="CERRAR" />
-        </Grid>
     </Grid>
-
 </Window>
