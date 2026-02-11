@@ -10,7 +10,7 @@
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="*,*"
+    <Grid ColumnDefinitions="300,*"
           Margin="20"
           ShowGridLines="False">
 
@@ -41,6 +41,13 @@
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Spacing="10">
+                    
+                    <Button HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Background="Crimson"
+                            IsVisible="{Binding SeMuestraPDF}"
+                            Command="{Binding OcultarPDFCommand}"
+                            Content="Ocultar PDF" />
 
                     <Button Content="Generar informe"
                             Width="150"
@@ -50,9 +57,9 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Genera un informe a partir del identificador de la reserva como parámetro.&#10;&#10;
-El informe incluye:&#10;
-- Identificador de la reserva&#10;
+                               Text="Genera un informe a partir del identificador de una reserva como parámetro.&#10;&#10;
+El informe debe mostrar:&#10;
+- Identificador de la reserva (QR)&#10;
 - Nombre del cliente&#10;
 - Correo del cliente&#10;
 - Identificador de la mesa&#10;

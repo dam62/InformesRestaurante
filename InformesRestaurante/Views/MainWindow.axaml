@@ -17,10 +17,7 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     <Grid>
-        <!-- Contenido principal -->
         <TabControl>
-
-            <!-- INFORMES -->
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
@@ -33,8 +30,19 @@
                 </TabItem.Header>
 
                 <TabControl TabStripPlacement="Left">
-                    <TabItem Header="Informe Reserva">
-                        <informesRestaurante:InformeReserva/>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Informe Reserva" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesRestaurante:InformeReserva />
                     </TabItem>
                     <TabItem Header="Ejemplo 2">
                         <!-- Contenido futuro -->
