@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:informesRestaurante="clr-namespace:InformesRestaurante.Views.InformesRestaurante"
+        xmlns:informesLineas="clr-namespace:InformesRestaurante.Views.InformesLineas"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="InformesRestaurante.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -45,7 +46,7 @@
                         <informesRestaurante:InformeReserva />
                     </TabItem>
                     <TabItem Header="Ejemplo 2">
-                        <!-- Contenido futuro -->
+                        
                     </TabItem>
                 </TabControl>
             </TabItem>
@@ -62,6 +63,39 @@
             <TabItem Header="Gráficos circulares">
                 <TabControl TabStripPlacement="Left">
                     <TabItem Header="Ejemplo 1"/>
+                </TabControl>
+            </TabItem>
+            
+            <!-- Lineas -->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <avalonia:MaterialIcon Kind="Table"
+                                               Width="20"
+                                               Height="20" />
+                        <TextBlock Classes="Centered"
+                                   Text="Graficos de Lineas" />
+                    </StackPanel>
+                </TabItem.Header>
+
+                <TabControl TabStripPlacement="Left">
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Platos Categorias" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesLineas:InformeCategoriasPlatos />
+                    </TabItem>
+                    <TabItem Header="Ejemplo 2">
+                        
+                    </TabItem>
                 </TabControl>
             </TabItem>
         </TabControl>
