@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Avalonia.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using InformesRestaurante.Models;
 using InformesRestaurante.Services;
 
 namespace InformesRestaurante.ViewModels;
@@ -14,6 +15,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty] private bool seMuestraPDF = false;
     
     [ObservableProperty] private AvaloniaList<String>? listaCategorias = new();
+    [ObservableProperty] private Categoria categoria = new();
     [ObservableProperty] private DateTimeOffset fechaInicio = new(DateTime.Now);
     [ObservableProperty] private DateTimeOffset fechaFinal = new(DateTime.Now);
     
@@ -24,21 +26,18 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    public void GenerarPDFReservaAsync(string id)
+    public void GenerarPDFReserva(string id)
     {
         Url = "localhost:10000/eriRestaurant/informeReserva/" + id;
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
-    public async Task GenerarPDFCategoriaPlatoAsync(string categoria)
+    public async Task GenerarPDFCategoriaPlatoAsync()
     {
-        if (categoria != null)
-        {
-            Url = "http://localhost:9876/reports/getplatosCategoria/"+categoria+"/"+
-                  FechaInicio.ToString("yyyy-MM-dd")+"/"+
-                  FechaFinal.ToString("yyyy-MM-dd");
-        }
+        Url = "http://localhost:10000/eriRestaurant/getplatosCategoria/"+Categoria+"/"+
+              FechaInicio.ToString("yyyy-MM-dd")+"/"+
+              FechaFinal.ToString("yyyy-MM-dd");
     }
     
     [RelayCommand]

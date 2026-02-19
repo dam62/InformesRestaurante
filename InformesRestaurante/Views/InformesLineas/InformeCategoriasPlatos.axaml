@@ -10,7 +10,7 @@
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="300,*"
+    <Grid ColumnDefinitions="320,*"
           Margin="20"
           ShowGridLines="False">
 
@@ -77,16 +77,9 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Genera un informe a partir del identificador de una reserva como parámetro.&#10;&#10;
-El informe debe mostrar:&#10;
-- Identificador de la reserva (QR)&#10;
-- Nombre del cliente&#10;
-- Correo del cliente&#10;
-- Identificador de la mesa&#10;
-- Capacidad de la mesa&#10;
-- Ubicación de la mesa&#10;
-- Fecha de la reserva&#10;
-- Número de personas"/>
+                               Text="Este informe permite consultar el listado de festivales aplicando distintos filtros para acotar la información mostrada.&#10;&#10;
+El usuario filtra la información por la categoria de plato y un rango de fechas&#10;
+Los resultados se muestran en formato de una grafica de lineas"/>
                 </StackPanel>
             </StackPanel>
         </Border>
