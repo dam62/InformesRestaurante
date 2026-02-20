@@ -16,9 +16,9 @@ public class N8NService
         client.BaseAddress = new Uri("http://localhost:5678/webhook/");
     }
     
-    public async Task<AvaloniaList<string>?> ObtenerCategoriasPlatos()
+    public async Task<AvaloniaList<string>?> ObtenerCategoriaPlatos()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "categorias");
+        var request = new HttpRequestMessage(HttpMethod.Get, "categoriaPlatos");
         var response = await client.SendAsync(request);
         var listaString = await response.Content.ReadAsStringAsync();
         return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);

@@ -9,7 +9,6 @@
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
-
     <Grid ColumnDefinitions="320,*"
           Margin="20"
           ShowGridLines="False">

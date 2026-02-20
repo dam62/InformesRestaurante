@@ -11,12 +11,18 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="InformesRestaurante">
-
+    
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+    <Interaction.Behaviors>
+        <EventTriggerBehavior EventName="Loaded">
+            <InvokeCommandAction Command="{Binding CargarDesplegablesCommand}" />
+        </EventTriggerBehavior>
+    </Interaction.Behaviors>
+    
     <Grid>
         <TabControl>
             <TabItem>
