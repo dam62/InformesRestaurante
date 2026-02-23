@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:InformesRestaurante.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="InformesRestaurante.Views.InformesCirculos.CapacidadMesa"
+             x:Class="InformesRestaurante.Views.InformesBarras.EmpleadoPlato"
              x:DataType="viewModels:MainWindowViewModel">
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
@@ -24,16 +24,27 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="CAPACIDAD MESA"
+                <TextBlock Text="INFORMACIÓN RESERVA"
                            FontSize="16"
                            FontWeight="Bold" />
 
                 <StackPanel Spacing="4">
-                    <TextBlock Text="Capacidad de la mesa"
+                    <TextBlock Text="ID de la reserva"
                                FontSize="13"
                                Foreground="DimGray" />
-                    <TextBox x:Name="CapMesa"
-                             Watermark="Inserta la capacidad" />
+                    <AutoCompleteBox IsTextCompletionEnabled="False" Name="AutoCompleteEmpleados"
+                                     FilterMode="None" MinimumPrefixLength="1"
+                                     Background="White"
+                                     MaxDropDownHeight="120" Watermark="Empleados"
+                                     Width="150" Margin="10"
+                                     ItemsSource="{Binding ListaEmpleados}"
+                                     Text="{Binding Filtro}">
+                        <Interaction.Behaviors>
+                            <EventTriggerBehavior EventName="TextChanged">
+                                <InvokeCommandAction Command="{Binding ObtenerEmpleadosPorFiltroCommand}"/>
+                            </EventTriggerBehavior>
+                        </Interaction.Behaviors>
+                    </AutoCompleteBox>
                 </StackPanel>
 
                 <Separator />
@@ -52,13 +63,21 @@
                     <Button Content="Generar informe"
                             Width="150"
                             Height="36"
-                            Command="{Binding GenerarPDFReservaCapacidadCommand}"
-                            CommandParameter="{Binding ElementName=CapMesa, Path=Text}" />
+                            Command="{Binding MostrarPDFEmpleadosCommand}"
+                            CommandParameter="{Binding ElementName=AutoCompleteEmpleados, Path=SelectedItem}" />
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap" FontSize="14"
-                               Text="Genera un informe de la cantidad de veces que un empleado a tomado un pedido.&#10;&#10;
-Muestra en una grafica de quesitos quien ha tomado mas pedidos entre todos los empleados."/>
+                    <TextBlock TextWrapping="Wrap"
+                               Text="Genera un informe a partir del identificador de una reserva como parámetro.&#10;&#10;
+El informe debe mostrar:&#10;
+- Identificador de la reserva (QR)&#10;
+- Nombre del cliente&#10;
+- Correo del cliente&#10;
+- Identificador de la mesa&#10;
+- Capacidad de la mesa&#10;
+- Ubicación de la mesa&#10;
+- Fecha de la reserva&#10;
+- Número de personas"/>
                 </StackPanel>
             </StackPanel>
         </Border>

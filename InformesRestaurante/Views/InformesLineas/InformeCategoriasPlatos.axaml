@@ -13,7 +13,7 @@
           Margin="20"
           ShowGridLines="False">
 
-        <!-- IZQUIERDA: OPCIONES -->
+        <!-- IZQUIERDA: INFO -->
         <Border Grid.Column="0"
                 Padding="20"
                 CornerRadius="8"
@@ -23,7 +23,7 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="Opciones del informe"
+                <TextBlock Text="INFORME CATEGORIA POR PLATO"
                            FontSize="16"
                            FontWeight="Bold" />
 

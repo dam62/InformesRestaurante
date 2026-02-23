@@ -6,6 +6,7 @@
         xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:informesRestaurante="clr-namespace:InformesRestaurante.Views.InformesRestaurante"
         xmlns:informesLineas="clr-namespace:InformesRestaurante.Views.InformesLineas"
+        xmlns:informesCirculos="clr-namespace:InformesRestaurante.Views.InformesCirculos"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="InformesRestaurante.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -58,17 +59,79 @@
             </TabItem>
 
             <!-- BARRAS -->
-            <TabItem Header="Gráficos de barras">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <avalonia:MaterialIcon Kind="Table"
+                                               Width="20"
+                                               Height="20" />
+                        <TextBlock Classes="Centered"
+                                   Text="Informes Restaurante" />
+                    </StackPanel>
+                </TabItem.Header>
+
                 <TabControl TabStripPlacement="Left">
-                    <TabItem Header="Ejemplo 1"/>
-                    <TabItem Header="Ejemplo 2"/>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Informe Reserva" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesRestaurante:InformeReserva />
+                    </TabItem>
+                    <TabItem Header="Ejemplo 2">
+                        
+                    </TabItem>
                 </TabControl>
             </TabItem>
 
             <!-- CIRCULARES -->
-            <TabItem Header="Gráficos circulares">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <avalonia:MaterialIcon Kind="Table"
+                                               Width="20"
+                                               Height="20" />
+                        <TextBlock Classes="Centered"
+                                   Text="Informes Restaurante" />
+                    </StackPanel>
+                </TabItem.Header>
+
                 <TabControl TabStripPlacement="Left">
-                    <TabItem Header="Ejemplo 1"/>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Informe Reserva" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesCirculos:PedidosEmpleados />
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Informe Reserva" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesCirculos:CapacidadMesa />
+                    </TabItem>
                 </TabControl>
             </TabItem>
             

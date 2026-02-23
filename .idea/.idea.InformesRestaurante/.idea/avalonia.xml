@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="InformesRestaurante/App.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
+        <entry key="InformesRestaurante/Views/InformesBarras/EmpleadoPlato.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesCirculos/CapacidadMesa.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesCirculos/InformeReserva.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesCirculos/PedidosEmpleado.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />

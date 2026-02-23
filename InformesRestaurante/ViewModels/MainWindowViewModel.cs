@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Avalonia.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using InformesRestaurante.Models;
 using InformesRestaurante.Services;
 
 namespace InformesRestaurante.ViewModels;
@@ -16,6 +17,9 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty] private AvaloniaList<String>? listaCategorias = new();
     [ObservableProperty] private DateTimeOffset fechaInicio = new(DateTime.Now);
     [ObservableProperty] private DateTimeOffset fechaFinal = new(DateTime.Now);
+    
+    [ObservableProperty] private AvaloniaList<Empleado>? listaEmpleados = new();
+    [ObservableProperty] private string filtro = string.Empty;
 
     public MainWindowViewModel()
     {
@@ -25,6 +29,15 @@ public partial class MainWindowViewModel : ViewModelBase
     public async Task CargarDesplegablesAsync()
     {
         ListaCategorias = await n8nService.ObtenerCategoriaPlatos();
+    }
+    
+    [RelayCommand]
+    public async Task ObtenerEmpleadosPorFiltroAsync()
+    {
+        if (!string.IsNullOrWhiteSpace(Filtro))
+        {
+            ListaEmpleados = await n8nService.ObtenerEmpleadosFiltrados(Filtro);
+        }
     }
 
     [RelayCommand]
@@ -37,7 +50,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarPDFCategoriaPlatoAsync(string categoria)
     {
-        Url = "localhost:10000/erciRestaurant/getplatosCategoria/"+categoria+"/"+
+        Url = "localhost:10000/erciRestaurant/getPlatosCategoria/"+categoria+"/"+
               FechaInicio.ToString("yyyy-MM-dd")+"/"+
               FechaFinal.ToString("yyyy-MM-dd");
         SeMuestraPDF = true;
@@ -51,11 +64,17 @@ public partial class MainWindowViewModel : ViewModelBase
     }
     
     [RelayCommand]
-    public void GenerarPDFReservaCapacidad(string id)
-        {
-            Url = "localhost:10000/erciRestaurant/getplatosCategoria/" + id;
-            SeMuestraPDF = true;
-        }
+    public void GenerarPDFReservaCapacidad(string cap)
+    {
+        Url = "localhost:10000/erciRestaurant/getPlatosCategoria/" + cap;
+        SeMuestraPDF = true;
+    }
+    
+    [RelayCommand]
+    public async Task MostrarPDFEmpleadosAsync(Empleado empleado)
+    {
+        Url = "http://localhost:9876/reports/getEmpleadoPlato/"+empleado.Id;
+    }
     
     [RelayCommand]
     public void OcultarPDF()
