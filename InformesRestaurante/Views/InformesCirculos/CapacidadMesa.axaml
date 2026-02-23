@@ -1,0 +1,78 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:InformesRestaurante.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="InformesRestaurante.Views.InformesCirculos.CapacidadMesa"
+             x:DataType="viewModels:MainWindowViewModel">
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="300,*"
+          Margin="20"
+          ShowGridLines="False">
+
+        <!-- IZQUIERDA: OPCIONES -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <StackPanel Spacing="16">
+
+                <TextBlock Text="Opciones del informe"
+                           FontSize="16"
+                           FontWeight="Bold" />
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="ID de la reserva"
+                               FontSize="13"
+                               Foreground="DimGray" />
+                    <TextBox x:Name="IDReserva"
+                             Watermark="Indique el ID de la reserva" />
+                </StackPanel>
+
+                <Separator />
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Spacing="10">
+                    
+                    <Button HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Background="Crimson"
+                            IsVisible="{Binding SeMuestraPDF}"
+                            Command="{Binding OcultarPDFCommand}"
+                            Content="Ocultar PDF" />
+
+                    <Button Content="Generar informe"
+                            Width="150"
+                            Height="36"
+                            Command="{Binding GenerarPDFReservaCapacidadCommand}"
+                            CommandParameter="{Binding ElementName=IDReserva, Path=Text}" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap" FontSize="14"
+                               Text="Genera un informe de la cantidad de veces que un empleado a tomado un pedido.&#10;&#10;
+Muestra en una grafica de quesitos quien ha tomado mas pedidos entre todos los empleados."/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- DERECHA: VISOR PDF -->
+        <Border Grid.Column="1"
+                Padding="10"
+                CornerRadius="8"
+                Background="White"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <WebView Url="{Binding Url}"
+                     IsVisible="{Binding SeMuestraPDF}" />
+        </Border>
+    </Grid>
+</UserControl>

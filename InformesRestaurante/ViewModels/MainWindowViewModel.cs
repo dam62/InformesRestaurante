@@ -30,18 +30,32 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public void GenerarPDFReserva(string id)
     {
-        Url = "localhost:10000/eriRestaurant/informeReserva/" + id;
+        Url = "localhost:10000/erciRestaurant/informeReserva/" + id;
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
     public async Task GenerarPDFCategoriaPlatoAsync(string categoria)
     {
-        Url = "localhost:10000/eriRestaurant/getplatosCategoria/"+categoria+"/"+
+        Url = "localhost:10000/erciRestaurant/getplatosCategoria/"+categoria+"/"+
               FechaInicio.ToString("yyyy-MM-dd")+"/"+
               FechaFinal.ToString("yyyy-MM-dd");
         SeMuestraPDF = true;
     }
+    
+    [RelayCommand]
+    public void GenerarPDFPedidosEmpleados()
+    {
+        Url = "localhost:10000/erciRestaurant/pedidosEmpleado";
+        SeMuestraPDF = true;
+    }
+    
+    [RelayCommand]
+    public void GenerarPDFReservaCapacidad(string id)
+        {
+            Url = "localhost:10000/erciRestaurant/getplatosCategoria/" + id;
+            SeMuestraPDF = true;
+        }
     
     [RelayCommand]
     public void OcultarPDF()
