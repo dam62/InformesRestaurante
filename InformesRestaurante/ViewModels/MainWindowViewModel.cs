@@ -73,7 +73,8 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task MostrarPDFEmpleadosAsync(Empleado empleado)
     {
-        Url = "http://localhost:9876/reports/getEmpleadoPlato/"+empleado.Id;
+        Url = "http://localhost:10000/erciRestaurant/getEmpleadoPlato/"+empleado.Id;
+        SeMuestraPDF = true;
     }
     
     [RelayCommand]

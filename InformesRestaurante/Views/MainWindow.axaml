@@ -7,6 +7,7 @@
         xmlns:informesRestaurante="clr-namespace:InformesRestaurante.Views.InformesRestaurante"
         xmlns:informesLineas="clr-namespace:InformesRestaurante.Views.InformesLineas"
         xmlns:informesCirculos="clr-namespace:InformesRestaurante.Views.InformesCirculos"
+        xmlns:informesBarras="clr-namespace:InformesRestaurante.Views.InformesBarras"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="InformesRestaurante.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -83,7 +84,7 @@
                                            Text="Informe Reserva" />
                             </StackPanel>
                         </TabItem.Header>
-                        <informesRestaurante:InformeReserva />
+                        <informesBarras:EmpleadoPlato />
                     </TabItem>
                     <TabItem Header="Ejemplo 2">
                         
