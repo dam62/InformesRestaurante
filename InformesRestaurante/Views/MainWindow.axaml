@@ -53,8 +53,19 @@
                         </TabItem.Header>
                         <informesRestaurante:InformeReserva />
                     </TabItem>
-                    <TabItem Header="Ejemplo 2">
-                        
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric2Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Informe Empleados" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesRestaurante:InformeEmpleados />
                     </TabItem>
                 </TabControl>
             </TabItem>
@@ -63,11 +74,11 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <avalonia:MaterialIcon Kind="Table"
+                        <avalonia:MaterialIcon Kind="BarChart"
                                                Width="20"
                                                Height="20" />
                         <TextBlock Classes="Centered"
-                                   Text="Informes Restaurante" />
+                                   Text="Graficos de Barras" />
                     </StackPanel>
                 </TabItem.Header>
 
@@ -86,9 +97,6 @@
                         </TabItem.Header>
                         <informesBarras:EmpleadoPlato />
                     </TabItem>
-                    <TabItem Header="Ejemplo 2">
-                        
-                    </TabItem>
                 </TabControl>
             </TabItem>
 
@@ -96,11 +104,11 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <avalonia:MaterialIcon Kind="Table"
+                        <avalonia:MaterialIcon Kind="ChartPie"
                                                Width="20"
                                                Height="20" />
                         <TextBlock Classes="Centered"
-                                   Text="Informes Restaurante" />
+                                   Text="Graficos de Quesitos" />
                     </StackPanel>
                 </TabItem.Header>
 
@@ -114,7 +122,7 @@
                                                        Height="20" />
                                 <TextBlock Classes="Centered"
                                            VerticalAlignment="Center"
-                                           Text="Informe Reserva" />
+                                           Text="Pedidos Realizados" />
                             </StackPanel>
                         </TabItem.Header>
                         <informesCirculos:PedidosEmpleados />
@@ -122,13 +130,13 @@
                     <TabItem>
                         <TabItem.Header>
                             <StackPanel Orientation="Horizontal">
-                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                <avalonia:MaterialIcon Kind="Numeric2Box"
                                                        Width="20"
                                                        VerticalAlignment="Center"
                                                        Height="20" />
                                 <TextBlock Classes="Centered"
                                            VerticalAlignment="Center"
-                                           Text="Informe Reserva" />
+                                           Text="Capacidad Mesa" />
                             </StackPanel>
                         </TabItem.Header>
                         <informesCirculos:CapacidadMesa />
@@ -140,7 +148,7 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
-                        <avalonia:MaterialIcon Kind="Table"
+                        <avalonia:MaterialIcon Kind="ChartLine"
                                                Width="20"
                                                Height="20" />
                         <TextBlock Classes="Centered"
@@ -162,9 +170,6 @@
                             </StackPanel>
                         </TabItem.Header>
                         <informesLineas:InformeCategoriasPlatos />
-                    </TabItem>
-                    <TabItem Header="Ejemplo 2">
-                        
                     </TabItem>
                 </TabControl>
             </TabItem>

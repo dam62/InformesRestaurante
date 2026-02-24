@@ -11,6 +11,7 @@
         <entry key="InformesRestaurante/Views/InformesCirculos/PedidosEmpleados.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesClientes/InformeCliente.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesLineas/InformeCategoriasPlatos.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
+        <entry key="InformesRestaurante/Views/InformesRestaurante/InformeEmpleados.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesRestaurante/InformeReserva.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/InformesRestaurante/PedidosEmpleado.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />
         <entry key="InformesRestaurante/Views/MainWindow.axaml" value="InformesRestaurante/InformesRestaurante.csproj" />

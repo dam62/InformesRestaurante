@@ -32,4 +32,12 @@ public class N8NService
         var listaString = await response.Content.ReadAsStringAsync();
         return JsonConvert.DeserializeObject<AvaloniaList<Empleado>>(listaString);
     }
+    
+    public async Task<AvaloniaList<string>?> ObtenerEmpleadosPuestos()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, "puesto");
+        var response = await client.SendAsync(request);
+        var listaString = await response.Content.ReadAsStringAsync();
+        return JsonConvert.DeserializeObject<AvaloniaList<string>>(listaString);
+    }
 }

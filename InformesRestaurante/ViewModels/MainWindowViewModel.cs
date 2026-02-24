@@ -20,6 +20,8 @@ public partial class MainWindowViewModel : ViewModelBase
     
     [ObservableProperty] private AvaloniaList<Empleado>? listaEmpleados = new();
     [ObservableProperty] private string filtro = string.Empty;
+    
+    [ObservableProperty] private AvaloniaList<String>? listaPuestos = new();
 
     public MainWindowViewModel()
     {
@@ -29,6 +31,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public async Task CargarDesplegablesAsync()
     {
         ListaCategorias = await n8nService.ObtenerCategoriaPlatos();
+        ListaPuestos = await n8nService.ObtenerEmpleadosPuestos();
     }
     
     [RelayCommand]
@@ -74,6 +77,13 @@ public partial class MainWindowViewModel : ViewModelBase
     public async Task MostrarPDFEmpleadosAsync(Empleado empleado)
     {
         Url = "http://localhost:10000/erciRestaurant/getEmpleadoPlato/"+empleado.Id;
+        SeMuestraPDF = true;
+    }
+    
+    [RelayCommand]
+    public async Task GenerarEmpleadosPuestoAsync(string puesto)
+    {
+        Url = "localhost:10000/erciRestaurant/getEmpleadoPuesto/"+puesto;
         SeMuestraPDF = true;
     }
     

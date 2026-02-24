@@ -4,13 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:InformesRestaurante.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="InformesRestaurante.Views.InformesCirculos.CapacidadMesa"
+             x:Class="InformesRestaurante.Views.InformesRestaurante.InformeEmpleados"
              x:DataType="viewModels:MainWindowViewModel">
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
-
-    <Grid ColumnDefinitions="300,*"
+    <Grid ColumnDefinitions="320,*"
           Margin="20"
           ShowGridLines="False">
 
@@ -24,16 +23,16 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="CAPACIDAD MESA"
+                <TextBlock Text="INFORME CATEGORIA POR PLATO"
                            FontSize="16"
                            FontWeight="Bold" />
 
                 <StackPanel Spacing="4">
-                    <TextBlock Text="Capacidad de la mesa"
+                    <TextBlock Text="ID de la reserva"
                                FontSize="13"
                                Foreground="DimGray" />
-                    <TextBox x:Name="CapMesa"
-                             Watermark="Inserta la capacidad" />
+                    <ComboBox PlaceholderText="Elige categoria" Name="ComboEm"
+                              ItemsSource="{Binding ListaPuestos}" />
                 </StackPanel>
 
                 <Separator />
@@ -52,13 +51,14 @@
                     <Button Content="Generar informe"
                             Width="150"
                             Height="36"
-                            Command="{Binding GenerarPDFReservaCapacidadCommand}"
-                            CommandParameter="{Binding ElementName=CapMesa, Path=Text}" />
+                            Command="{Binding GenerarPDFCategoriaPlatoCommand}"
+                            CommandParameter="{Binding ElementName=ComboEm, Path=SelectedItem}" />
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap" FontSize="14"
-                               Text="Genera una grafica de quesitos de las mesas con mayor capacidad al número que has insertado. (Se tiene que insertar un número)&#10;&#10;
-Muestra cuales mesas tienen mas capacidad entre ellas."/>
+                    <TextBlock TextWrapping="Wrap"
+                               Text="Este informe permite consultar el listado de festivales aplicando distintos filtros para acotar la información mostrada.&#10;&#10;
+El usuario filtra la información por la categoria de plato y un rango de fechas&#10;
+Los resultados se muestran en formato de una grafica de lineas"/>
                 </StackPanel>
             </StackPanel>
         </Border>
