@@ -42,7 +42,7 @@
                     <Button Content="Generar informe"
                             Width="150"
                             Height="36"
-                            Command="{Binding GenerarPDFPedidosEmpleadosCommand}"/>
+                            Command="{Binding GenerarVentasEmpleadosCommand}"/>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap" FontSize="14"

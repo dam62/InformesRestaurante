@@ -197,7 +197,7 @@
                                            Text="Platos Categoria" />
                             </StackPanel>
                         </TabItem.Header>
-                        <informesLineas:InformeCategoriasPlatos />
+                        <informesLineas:VentasEmpleado />
                     </TabItem>
                 </TabControl>
             </TabItem>
