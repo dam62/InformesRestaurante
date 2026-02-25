@@ -92,10 +92,24 @@
                                                        Height="20" />
                                 <TextBlock Classes="Centered"
                                            VerticalAlignment="Center"
-                                           Text="Informe Reserva" />
+                                           Text="Empleado Platos" />
                             </StackPanel>
                         </TabItem.Header>
                         <informesBarras:EmpleadoPlato />
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric2Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Ventas por categoria" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesBarras:VentasPorCategorias />
                     </TabItem>
                 </TabControl>
             </TabItem>
@@ -122,7 +136,7 @@
                                                        Height="20" />
                                 <TextBlock Classes="Centered"
                                            VerticalAlignment="Center"
-                                           Text="Pedidos Realizados" />
+                                           Text="Pedidos por Empleado" />
                             </StackPanel>
                         </TabItem.Header>
                         <informesCirculos:PedidosEmpleados />
@@ -166,7 +180,7 @@
                                                        Height="20" />
                                 <TextBlock Classes="Centered"
                                            VerticalAlignment="Center"
-                                           Text="Platos Categorias" />
+                                           Text="Platos Categoria" />
                             </StackPanel>
                         </TabItem.Header>
                         <informesLineas:InformeCategoriasPlatos />

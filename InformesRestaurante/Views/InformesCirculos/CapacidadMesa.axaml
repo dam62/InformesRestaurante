@@ -57,8 +57,8 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap" FontSize="14"
-                               Text="Genera una grafica de quesitos de las mesas con mayor capacidad al número que has insertado. (Se tiene que insertar un número)&#10;&#10;
-Muestra cuales mesas tienen mas capacidad entre ellas."/>
+                               Text="Este informe muestra las mesas según su capacidad, a partir de un valor introducido por el usuario.&#10;&#10;
+Se genera un informe que muestra las mesas cuya capacidad es igual o superior al número indicado."/>
                 </StackPanel>
             </StackPanel>
         </Border>

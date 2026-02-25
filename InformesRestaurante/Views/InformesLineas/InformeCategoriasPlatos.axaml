@@ -28,7 +28,7 @@
                            FontWeight="Bold" />
 
                 <StackPanel Spacing="4">
-                    <TextBlock Text="ID de la reserva"
+                    <TextBlock Text="Categoria plato"
                                FontSize="13"
                                Foreground="DimGray" />
                     <ComboBox PlaceholderText="Elige categoria" Name="ComboCat"
@@ -76,9 +76,9 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Este informe permite consultar el listado de festivales aplicando distintos filtros para acotar la información mostrada.&#10;&#10;
-El usuario filtra la información por la categoria de plato y un rango de fechas&#10;
-Los resultados se muestran en formato de una grafica de lineas"/>
+                               Text="Este informe permite consultar las ventas de platos según su categoría, aplicando fechas.&#10;&#10;
+El usuario puede seleccionar una categoría de plato y un rango de fechas específico.&#10;
+Los resultados se presentan en formato de gráfica de líneas."/>
                 </StackPanel>
             </StackPanel>
         </Border>

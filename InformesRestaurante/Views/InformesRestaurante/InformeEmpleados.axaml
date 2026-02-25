@@ -23,15 +23,15 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="INFORME CATEGORIA POR PLATO"
+                <TextBlock Text="INFORMACIÓN DE EMPLEADOS POR PUESTO"
                            FontSize="16"
                            FontWeight="Bold" />
 
                 <StackPanel Spacing="4">
-                    <TextBlock Text="ID de la reserva"
+                    <TextBlock Text="Puesto de trabajo"
                                FontSize="13"
                                Foreground="DimGray" />
-                    <ComboBox PlaceholderText="Elige categoria" Name="ComboEm"
+                    <ComboBox PlaceholderText="Elige el puesto de los empleados" Name="ComboEm"
                               ItemsSource="{Binding ListaPuestos}" />
                 </StackPanel>
 
@@ -56,9 +56,8 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Este informe permite consultar el listado de festivales aplicando distintos filtros para acotar la información mostrada.&#10;&#10;
-El usuario filtra la información por la categoria de plato y un rango de fechas&#10;
-Los resultados se muestran en formato de una grafica de lineas"/>
+                               Text="Este informe mostrara la información de todos los empleados que 
+                               trabajen en el puesto de trabajo que has seleccionado"/>
                 </StackPanel>
             </StackPanel>
         </Border>

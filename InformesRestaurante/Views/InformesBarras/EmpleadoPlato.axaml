@@ -10,7 +10,7 @@
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="300,*"
+    <Grid ColumnDefinitions="320,*"
           Margin="20"
           ShowGridLines="False">
 
@@ -24,12 +24,12 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="INFORMACIÓN RESERVA"
+                <TextBlock Text="INFORMACIÓN EMPLEADO Y PLATOS"
                            FontSize="16"
                            FontWeight="Bold" />
 
                 <StackPanel Spacing="4">
-                    <TextBlock Text="ID de la reserva"
+                    <TextBlock Text="Empleados"
                                FontSize="13"
                                Foreground="DimGray" />
                     <AutoCompleteBox IsTextCompletionEnabled="False" Name="AutoCompleteEmpleados"
@@ -68,16 +68,8 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Genera un informe a partir del identificador de una reserva como parámetro.&#10;&#10;
-El informe debe mostrar:&#10;
-- Identificador de la reserva (QR)&#10;
-- Nombre del cliente&#10;
-- Correo del cliente&#10;
-- Identificador de la mesa&#10;
-- Capacidad de la mesa&#10;
-- Ubicación de la mesa&#10;
-- Fecha de la reserva&#10;
-- Número de personas"/>
+                               Text="Este informe permite consultar los platos gestionados por un empleado específico.&#10;&#10;
+El usuario puede seleccionar un empleado para ver un resumen de su actividad."/>
                 </StackPanel>
             </StackPanel>
         </Border>
