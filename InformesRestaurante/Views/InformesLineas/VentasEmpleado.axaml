@@ -4,12 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:InformesRestaurante.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="InformesRestaurante.Views.InformesLineas.InformeCategoriasPlatos"
+             x:Class="InformesRestaurante.Views.InformesLineas.VentasEmpleado"
              x:DataType="viewModels:MainWindowViewModel">
     <Design.DataContext>
         <viewModels:MainWindowViewModel />
     </Design.DataContext>
-    <Grid ColumnDefinitions="340,*"
+
+    <Grid ColumnDefinitions="300,*"
           Margin="20"
           ShowGridLines="False">
 
@@ -23,39 +24,9 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="INFORME CATEGORIA POR PLATO"
+                <TextBlock Text="PEDIDOS EMPLEADOS"
                            FontSize="16"
                            FontWeight="Bold" />
-
-                <StackPanel Spacing="4">
-                    <TextBlock Text="Categoria plato"
-                               FontSize="13"
-                               Foreground="DimGray" />
-                    <ComboBox PlaceholderText="Elige categoria" Name="ComboCat"
-                              ItemsSource="{Binding ListaCategorias}" />
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal"
-                            Spacing="12">
-
-                    <StackPanel Spacing="4"
-                                Width="150">
-                        <TextBlock Text="Fecha inicio"
-                                   FontSize="13"
-                                   Foreground="DimGray" />
-                        <DatePicker Width="155" SelectedDate="{Binding FechaInicio}" />
-                    </StackPanel>
-
-                    <StackPanel Spacing="4"
-                                Width="150">
-                        <TextBlock Text="Fecha fin"
-                                   FontSize="13"
-                                   Foreground="DimGray" />
-                        <DatePicker Width="155" SelectedDate="{Binding FechaFinal}" />
-                    </StackPanel>
-                </StackPanel>
-
-                <Separator />
 
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
@@ -71,14 +42,13 @@
                     <Button Content="Generar informe"
                             Width="150"
                             Height="36"
-                            Command="{Binding GenerarPDFCategoriaPlatoCommand}"
-                            CommandParameter="{Binding ElementName=ComboCat, Path=SelectedItem}" />
+                            Command="{Binding GenerarPDFPedidosEmpleadosCommand}"/>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap"
-                               Text="Este informe permite consultar las ventas de platos según su categoría, aplicando fechas.&#10;&#10;
-El usuario puede seleccionar una categoría de plato y un rango de fechas específico.&#10;
-Los resultados se presentan en formato de gráfica de líneas."/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14"
+                               Text="Este informe muestra la cantidad de pedidos gestionados por cada empleado.&#10;&#10;
+Muestra de forma visual qué empleado ha atendido más pedidos en el restaurante.&#10;
+Los resultados se presentan en formato de gráfica de quesitos."/>
                 </StackPanel>
             </StackPanel>
         </Border>

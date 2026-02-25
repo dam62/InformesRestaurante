@@ -185,6 +185,20 @@
                         </TabItem.Header>
                         <informesLineas:InformeCategoriasPlatos />
                     </TabItem>
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <avalonia:MaterialIcon Kind="Numeric1Box"
+                                                       Width="20"
+                                                       VerticalAlignment="Center"
+                                                       Height="20" />
+                                <TextBlock Classes="Centered"
+                                           VerticalAlignment="Center"
+                                           Text="Platos Categoria" />
+                            </StackPanel>
+                        </TabItem.Header>
+                        <informesLineas:InformeCategoriasPlatos />
+                    </TabItem>
                 </TabControl>
             </TabItem>
         </TabControl>

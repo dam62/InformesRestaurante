@@ -22,6 +22,9 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty] private string filtro = string.Empty;
     
     [ObservableProperty] private AvaloniaList<String>? listaPuestos = new();
+    
+    [ObservableProperty] private DateTimeOffset fecha1 = new(DateTime.Now);
+    [ObservableProperty] private DateTimeOffset fecha2 = new(DateTime.Now);
 
     public MainWindowViewModel()
     {
@@ -44,38 +47,48 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    public void GenerarPDFReserva(string id)
+    public async Task GenerarPDFReservaAsync(string id)
     {
-        Url = "localhost:10000/erciRestaurant/informeReserva/" + id;
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/informeReserva/" + id;
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
     public async Task GenerarPDFCategoriaPlatoAsync(string categoria)
     {
-        Url = "localhost:10000/erciRestaurant/getPlatosCategoria/"+categoria+"/"+
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/getPlatosCategoria/"+categoria+"/"+
               FechaInicio.ToString("yyyy-MM-dd")+"/"+
               FechaFinal.ToString("yyyy-MM-dd");
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
-    public void GenerarPDFPedidosEmpleados()
+    public async Task GenerarPDFPedidosEmpleadosAsync()
     {
-        Url = "localhost:10000/erciRestaurant/pedidosEmpleado";
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/pedidosEmpleado";
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
-    public void GenerarPDFReservaCapacidad(string cap)
+    public async Task GenerarPDFReservaCapacidadAsync(string cap)
     {
-        Url = "localhost:10000/erciRestaurant/getPlatosCategoria/" + cap;
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/getPlatosCategoria/" + cap;
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
     public async Task MostrarPDFEmpleadosAsync(Empleado empleado)
     {
+        SeMuestraPDF = false;
+        Url = null;
         Url = "http://localhost:10000/erciRestaurant/getEmpleadoPlato/"+empleado.Id;
         SeMuestraPDF = true;
     }
@@ -83,7 +96,29 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarEmpleadosPuestoAsync(string puesto)
     {
-        Url = "localhost:10000/erciRestaurant/getEmpleadoPuesto/"+puesto;
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/getEmpleadoPuesto/"+puesto;
+        SeMuestraPDF = true;
+    }
+    
+    [RelayCommand]
+    public async Task GenerarVentasPorCategoriaAsync()
+    {
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/getVentasCategoria/"+
+              Fecha1.ToString("yyyy-MM-dd")+"/"+
+              Fecha2.ToString("yyyy-MM-dd");
+        SeMuestraPDF = true;
+    }
+    
+    [RelayCommand]
+    public async Task GenerarVentasEmpleadosAsync()
+    {
+        SeMuestraPDF = false;
+        Url = null;
+        Url = "http://localhost:10000/erciRestaurant/ventasEmpleado";
         SeMuestraPDF = true;
     }
     

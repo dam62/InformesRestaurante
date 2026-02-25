@@ -2,7 +2,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:InformesRestaurante.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="InformesRestaurante.Views.InformesBarras.VentasPorCategorias">
-    Welcome to Avalonia!
+             x:Class="InformesRestaurante.Views.InformesBarras.VentasPorCategorias"
+             x:DataType="viewModels:MainWindowViewModel">
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+    <Grid ColumnDefinitions="350,*"
+          Margin="20"
+          ShowGridLines="False">
+
+        <!-- IZQUIERDA: INFO -->
+        <Border Grid.Column="0"
+                Padding="20"
+                CornerRadius="8"
+                Background="WhiteSmoke"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <StackPanel Spacing="16">
+
+                <TextBlock Text="INFORME VENTAS POR CATEGORIA"
+                           FontSize="16"
+                           FontWeight="Bold" />
+                
+                <StackPanel Orientation="Horizontal"
+                            Spacing="12">
+
+                    <StackPanel Spacing="4"
+                                Width="150">
+                        <TextBlock Text="Fecha principio"
+                                   FontSize="13"
+                                   Foreground="DimGray" />
+                        <DatePicker Width="155" SelectedDate="{Binding Fecha1}" />
+                    </StackPanel>
+
+                    <StackPanel Spacing="4"
+                                Width="150">
+                        <TextBlock Text="Fecha final"
+                                   FontSize="13"
+                                   Foreground="DimGray" />
+                        <DatePicker Width="155" SelectedDate="{Binding Fecha2}" />
+                    </StackPanel>
+                </StackPanel>
+
+                <Separator />
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Spacing="10">
+                    
+                    <Button HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Background="Crimson"
+                            IsVisible="{Binding SeMuestraPDF}"
+                            Command="{Binding OcultarPDFCommand}"
+                            Content="Ocultar PDF" />
+
+                    <Button Content="Generar informe"
+                            Width="150"
+                            Height="36"
+                            Command="{Binding GenerarVentasPorCategoriaCommand}"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock TextWrapping="Wrap"
+                               Text="Este informe permite consultar las ventas de platos según su categoría, aplicando fechas.&#10;&#10;
+El usuario puede seleccionar una categoría de plato y un rango de fechas específico.&#10;
+Los resultados se presentan en formato de gráfica de líneas."/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- DERECHA: VISOR PDF -->
+        <Border Grid.Column="1"
+                Padding="10"
+                CornerRadius="8"
+                Background="White"
+                BorderBrush="LightGray"
+                BorderThickness="1">
+
+            <WebView Url="{Binding Url}"
+                     IsVisible="{Binding SeMuestraPDF}" />
+        </Border>
+    </Grid>
 </UserControl>
