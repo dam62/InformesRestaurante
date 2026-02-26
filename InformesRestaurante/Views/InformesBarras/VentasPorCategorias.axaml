@@ -32,7 +32,7 @@
 
                     <StackPanel Spacing="4"
                                 Width="150">
-                        <TextBlock Text="Fecha principio"
+                        <TextBlock Text="Fecha inicio"
                                    FontSize="13"
                                    Foreground="DimGray" />
                         <DatePicker Width="155" SelectedDate="{Binding Fecha1}" />
@@ -40,7 +40,7 @@
 
                     <StackPanel Spacing="4"
                                 Width="150">
-                        <TextBlock Text="Fecha final"
+                        <TextBlock Text="Fecha fin"
                                    FontSize="13"
                                    Foreground="DimGray" />
                         <DatePicker Width="155" SelectedDate="{Binding Fecha2}" />
@@ -67,9 +67,8 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Este informe permite consultar las ventas de platos según su categoría, aplicando fechas.&#10;&#10;
-El usuario puede seleccionar una categoría de plato y un rango de fechas específico.&#10;
-Los resultados se presentan en formato de gráfica de líneas."/>
+                               Text="Este informe muestra el total de ventas agrupadas por categoría de plato dentro de un rango de fechas seleccionado.&#10;&#10;
+El resultado se muestra de mayor a menor venta por categoria."/>
                 </StackPanel>
             </StackPanel>
         </Border>

@@ -57,8 +57,8 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap" FontSize="14"
-                               Text="Este informe muestra las mesas según su capacidad, a partir de un valor introducido por el usuario.&#10;&#10;
-Se genera un informe que muestra las mesas cuya capacidad es igual o superior al número indicado."/>
+                               Text="Este informe muestra las mesas cuya capacidad es mayor al valor dado.&#10;&#10;
+Cada porción del gráfico representa una mesa y el tamaño indica el porcentaje de reservas que aporta sobre el total."/>
                 </StackPanel>
             </StackPanel>
         </Border>

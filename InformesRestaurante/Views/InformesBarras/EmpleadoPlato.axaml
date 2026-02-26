@@ -35,7 +35,7 @@
                     <AutoCompleteBox IsTextCompletionEnabled="False" Name="AutoCompleteEmpleados"
                                      FilterMode="None" MinimumPrefixLength="1"
                                      Background="White"
-                                     MaxDropDownHeight="120" Watermark="Empleados"
+                                     MaxDropDownHeight="120" Watermark="Nombre de empleado"
                                      Width="150" Margin="10"
                                      ItemsSource="{Binding ListaEmpleados}"
                                      Text="{Binding Filtro}">
@@ -69,7 +69,7 @@
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
                                Text="Este informe permite consultar los platos gestionados por un empleado específico.&#10;&#10;
-El usuario puede seleccionar un empleado para ver un resumen de su actividad."/>
+El usuario debe insertar el nombre del empleado para ver un resumen de su actividad."/>
                 </StackPanel>
             </StackPanel>
         </Border>

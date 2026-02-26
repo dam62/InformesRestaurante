@@ -23,7 +23,7 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="INFORMACIÓN DE EMPLEADOS POR PUESTO"
+                <TextBlock Text="EMPLEADOS POR PUESTO"
                            FontSize="16"
                            FontWeight="Bold" />
 
@@ -31,7 +31,7 @@
                     <TextBlock Text="Puesto de trabajo"
                                FontSize="13"
                                Foreground="DimGray" />
-                    <ComboBox PlaceholderText="Elige el puesto de los empleados" Name="ComboEm"
+                    <ComboBox PlaceholderText="Elige el puesto de trabajo" Name="ComboEm"
                               ItemsSource="{Binding ListaPuestos}" />
                 </StackPanel>
 
@@ -56,8 +56,12 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Este informe mostrara la información de todos los empleados que 
-                               trabajen en el puesto de trabajo que has seleccionado"/>
+                               Text="Este informe mostrara la información de todos los empleados que trabajen en el puesto que has seleccionado.&#10;&#10;
+El informe debe mostrar:&#10;
+- Identificador del empleado&#10;
+- Nombre del empleado&#10;
+- Salario que cobra&#10;
+- Fecha de contratación"/>
                 </StackPanel>
             </StackPanel>
         </Border>

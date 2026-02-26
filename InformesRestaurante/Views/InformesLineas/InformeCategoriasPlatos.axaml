@@ -77,8 +77,7 @@
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
                                Text="Este informe permite consultar las ventas de platos según su categoría, aplicando fechas.&#10;&#10;
-El usuario puede seleccionar una categoría de plato y un rango de fechas específico.&#10;
-Los resultados se presentan en formato de gráfica de líneas."/>
+El usuario puede seleccionar una categoría de plato y un rango de fechas específico."/>
                 </StackPanel>
             </StackPanel>
         </Border>

@@ -57,7 +57,7 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap"
-                               Text="Genera un informe a partir del identificador de una reserva como parámetro. (Solo permite número)&#10;&#10;
+                               Text="Genera un informe a partir del identificador de una reserva como parámetro.&#10;&#10;
 El informe debe mostrar:&#10;
 - Identificador de la reserva (QR)&#10;
 - Nombre del cliente&#10;

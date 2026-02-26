@@ -24,7 +24,7 @@
 
             <StackPanel Spacing="16">
 
-                <TextBlock Text="PEDIDOS EMPLEADOS"
+                <TextBlock Text="PEDIDOS POR EMPLEADOS"
                            FontSize="16"
                            FontWeight="Bold" />
 
@@ -46,9 +46,8 @@
                 </StackPanel>
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap" FontSize="14"
-                               Text="Este informe muestra la cantidad de pedidos gestionados por cada empleado.&#10;&#10;
-Muestra de forma visual qué empleado ha atendido más pedidos en el restaurante.&#10;
-Los resultados se presentan en formato de gráfica de quesitos."/>
+                               Text="Este informe muestra el total de ventas realizadas por cada empleado, agrupado por fecha.&#10;&#10;
+Permite visualizar la evolución de las ventas por empleado a lo largo del tiempo."/>
                 </StackPanel>
             </StackPanel>
         </Border>

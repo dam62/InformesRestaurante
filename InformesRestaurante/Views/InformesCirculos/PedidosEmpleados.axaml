@@ -47,8 +47,7 @@
                 <StackPanel>
                     <TextBlock TextWrapping="Wrap" FontSize="14"
                                Text="Este informe muestra la cantidad de pedidos gestionados por cada empleado.&#10;&#10;
-Muestra de forma visual qué empleado ha atendido más pedidos en el restaurante.&#10;
-Los resultados se presentan en formato de gráfica de quesitos."/>
+Muestra de forma visual qué empleado ha atendido más pedidos en el restaurante."/>
                 </StackPanel>
             </StackPanel>
         </Border>
