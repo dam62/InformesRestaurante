@@ -49,8 +49,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarPDFReservaAsync(string id)
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/informeReserva/" + id;
         SeMuestraPDF = true;
     }
@@ -58,8 +56,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarPDFCategoriaPlatoAsync(string categoria)
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/getPlatosCategoria/"+categoria+"/"+
               FechaInicio.ToString("yyyy-MM-dd")+"/"+
               FechaFinal.ToString("yyyy-MM-dd");
@@ -69,8 +65,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarPDFPedidosEmpleadosAsync()
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/pedidosEmpleado";
         SeMuestraPDF = true;
     }
@@ -78,8 +72,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarPDFReservaCapacidadAsync(string cap)
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/getPlatosCategoria/" + cap;
         SeMuestraPDF = true;
     }
@@ -87,8 +79,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task MostrarPDFEmpleadosAsync(Empleado empleado)
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/getEmpleadoPlato/"+empleado.Id;
         SeMuestraPDF = true;
     }
@@ -96,8 +86,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarEmpleadosPuestoAsync(string puesto)
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/getEmpleadoPuesto/"+puesto;
         SeMuestraPDF = true;
     }
@@ -105,8 +93,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarVentasPorCategoriaAsync()
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/getVentasCategoria/"+
               Fecha1.ToString("yyyy-MM-dd")+"/"+
               Fecha2.ToString("yyyy-MM-dd");
@@ -116,16 +102,13 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarVentasEmpleadosAsync()
     {
-        SeMuestraPDF = false;
-        Url = null;
         Url = "http://localhost:10000/erciRestaurant/ventasEmpleado";
         SeMuestraPDF = true;
     }
     
     [RelayCommand]
-    public void OcultarPDF()
+    public void OcultarPdf()
     {
         SeMuestraPDF = false;
-        Url = null;
     }
 }

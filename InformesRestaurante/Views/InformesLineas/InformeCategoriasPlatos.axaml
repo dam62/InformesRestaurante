@@ -13,7 +13,7 @@
           Margin="20"
           ShowGridLines="False">
 
-        <!-- IZQUIERDA: INFO -->
+        <!-- IZQUIERDA: DATOS -->
         <Border Grid.Column="0"
                 Padding="20"
                 CornerRadius="8"
@@ -65,7 +65,7 @@
                             VerticalAlignment="Center"
                             Background="Crimson"
                             IsVisible="{Binding SeMuestraPDF}"
-                            Command="{Binding OcultarPDFCommand}"
+                            Command="{Binding OcultarPdfCommand}"
                             Content="Ocultar PDF" />
 
                     <Button Content="Generar informe"
