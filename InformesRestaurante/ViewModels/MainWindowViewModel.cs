@@ -126,5 +126,6 @@ public partial class MainWindowViewModel : ViewModelBase
     public void OcultarPDF()
     {
         SeMuestraPDF = false;
+        Url = null;
     }
 }
