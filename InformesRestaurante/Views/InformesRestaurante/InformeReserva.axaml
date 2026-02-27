@@ -78,7 +78,7 @@ El informe debe mostrar:&#10;
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>

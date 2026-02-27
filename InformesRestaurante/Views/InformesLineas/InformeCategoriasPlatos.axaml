@@ -89,7 +89,7 @@ El usuario puede seleccionar una categorÃ­a de plato y un rango de fechas especÃ
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>

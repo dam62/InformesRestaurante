@@ -70,7 +70,7 @@ Cada porción del gráfico representa una mesa y el tamaño indica el porcentaje
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>

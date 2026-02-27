@@ -59,7 +59,7 @@ Permite visualizar la evolución de las ventas por empleado a lo largo del tiemp
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>

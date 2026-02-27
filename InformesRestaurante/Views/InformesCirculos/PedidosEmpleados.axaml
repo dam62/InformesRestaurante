@@ -59,7 +59,7 @@ Muestra de forma visual qué empleado ha atendido más pedidos en el restaurante
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>

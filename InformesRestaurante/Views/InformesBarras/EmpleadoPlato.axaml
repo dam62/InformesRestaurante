@@ -81,7 +81,7 @@ El usuario debe insertar el nombre del empleado para ver un resumen de su activi
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>

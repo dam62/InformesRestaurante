@@ -80,7 +80,7 @@ El resultado se muestra de mayor a menor venta por categoria."/>
                 Background="White"
                 BorderBrush="LightGray"
                 BorderThickness="1">
-
+            
             <WebView Url="{Binding Url}"
                      IsVisible="{Binding SeMuestraPDF}" />
         </Border>
