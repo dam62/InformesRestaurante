@@ -72,7 +72,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public async Task GenerarPDFReservaCapacidadAsync(string cap)
     {
-        Url = "http://localhost:10000/erciRestaurant/getPlatosCategoria/" + cap;
+        Url = "http://localhost:10000/erciRestaurant/getReservaCapacidad/" + cap;
         SeMuestraPDF = true;
     }
     

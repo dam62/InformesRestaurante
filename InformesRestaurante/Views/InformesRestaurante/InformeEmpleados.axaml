@@ -51,7 +51,7 @@
                     <Button Content="Generar informe"
                             Width="150"
                             Height="36"
-                            Command="{Binding GenerarPDFCategoriaPlatoCommand}"
+                            Command="{Binding GenerarEmpleadosPuestoCommand}"
                             CommandParameter="{Binding ElementName=ComboEm, Path=SelectedItem}" />
                 </StackPanel>
                 <StackPanel>
